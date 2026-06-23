@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página não encontrada — Prof. Manoel Moraes</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --azul: #0D1B2A; --ciano: #00B4D8; --cinza: #64748B; --fundo: #F8FAFC; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--azul);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    h1, p, a { font-family: 'Space Grotesk', sans-serif; }
+    .code {
+      font-size: clamp(6rem, 20vw, 10rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--ciano);
+      letter-spacing: -4px;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 12px; }
+    p  { color: #94A3B8; font-size: 1rem; max-width: 420px; margin-bottom: 36px; line-height: 1.6; }
+    a {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--ciano);
+      color: var(--azul);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    a:hover { background: #02caf5; transform: translateY(-2px); }
+    .logo {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .logo:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <a class="logo" href="/">Prof. Manoel Moraes</a>
+  <div class="code">404</div>
+  <h1>Página não encontrada</h1>
+  <p>A página que você procura não existe ou foi movida. Volte ao início e encontre o que precisa.</p>
+  <a href="/">Voltar ao início</a>
+</body>
+</html>

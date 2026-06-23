@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notas — Prof. Manoel Moraes</title>
+  <meta name="description" content="Notas curtas do Prof. Manoel Moraes sobre astrofísica, tecnologia e educação." />
+  <meta property="og:title" content="Notas — Prof. Manoel Moraes" />
+  <meta property="og:description" content="Reflexões curtas sobre astrofísica, tecnologia e educação." />
+  <meta property="og:image" content="https://www.manoelmoraes.pro.br/images/og-image.png" />
+  <meta property="og:url" content="https://www.manoelmoraes.pro.br/notas.html" />
+  <meta property="og:type" content="website" />
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMF7R7HWPW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PMF7R7HWPW');
+  </script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Estilos específicos da página de notas ── */
+    .notas-hero {
+      background: var(--azul);
+      color: #fff;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+
+    .notas-hero .sec-tag {
+      background: rgba(0,180,216,0.15);
+      color: var(--ciano);
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .notas-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 12px;
+    }
+
+    .notas-hero p {
+      color: #94A3B8;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .notas-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    /* ── Cada nota ── */
+    .nota {
+      padding-bottom: 48px;
+      margin-bottom: 48px;
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .nota:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .nota-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .nota-data {
+      font-size: 0.82rem;
+      color: var(--cinza);
+    }
+
+    .nota-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+    }
+
+    .nota-tag.verde  { background: #DCFCE7; color: #166534; }
+    .nota-tag.roxo   { background: #F3E8FF; color: #6B21A8; }
+    .nota-tag.laranja{ background: #FEF3C7; color: #B45309; }
+
+    .nota h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .nota p {
+      color: #334155;
+      line-height: 1.8;
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .nota p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Voltar ao site ── */
+    .notas-voltar {
+      text-align: center;
+      padding: 0 24px 48px;
+    }
+
+    .notas-voltar a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      color: var(--cinza);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .notas-voltar a:hover { color: var(--ciano); }
+
+    /* ── Faça sua pergunta ── */
+    .notas-pergunta {
+      max-width: 720px;
+      margin: 0 auto 16px;
+      padding: 56px 24px 0;
+      border-top: 1px solid var(--linha);
+    }
+
+    .notas-pergunta h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .notas-pergunta > p {
+      color: var(--cinza);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .notas-pergunta .form-grupo {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .notas-pergunta label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--azul);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .notas-pergunta input,
+    .notas-pergunta textarea {
+      padding: 11px 14px;
+      border: 1.5px solid var(--linha);
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--azul);
+      background: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .notas-pergunta input:focus,
+    .notas-pergunta textarea:focus {
+      border-color: var(--ciano);
+    }
+
+    .notas-pergunta textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .notas-pergunta .form-submit {
+      margin-top: 4px;
+      padding: 12px 28px;
+      background: var(--ciano);
+      color: var(--azul);
+      border: none;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .notas-pergunta .form-submit:hover { background: #02caf5; transform: translateY(-1px); }
+    .notas-pergunta .form-submit:disabled { opacity: .6; cursor: default; transform: none; }
+
+    .notas-pergunta .form-aviso {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--cinza);
+    }
+
+    /* Esconde barra do Google Translate */
+    .goog-te-banner-frame,
+    #goog-gt-tt,
+    .goog-te-balloon-frame { display: none !important; }
+    body { top: 0 !important; }
+  </style>
+</head>
+<body>
+
+<div id="google_translate_element" style="display:none"></div>
+
+<header>
+  <a class="logo" href="/">Prof. Manoel Moraes</a>
+
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="links" id="menu" aria-label="Menu principal">
+    <a href="/#inicio">Início</a>
+    <a href="/#sobre">Sobre</a>
+    <a href="/#ensino">Ensino</a>
+    <a href="/#palestras">Palestras</a>
+    <a href="/#cursos">Cursos</a>
+    <a href="/#pesquisa">Pesquisa</a>
+    <a href="notas.html" class="ativo">Notas</a>
+    <a href="/#contato">Contato</a>
+    <div class="lang-toggle">
+      <button class="lang-btn ativo" id="btn-pt" onclick="traduzirPara('pt')">PT</button>
+      <span>|</span>
+      <button class="lang-btn" id="btn-en" onclick="traduzirPara('en')">EN</button>
+    </div>
+  </nav>
+</header>
+
+<div class="notas-hero">
+  <div class="sec-tag">Notas</div>
+  <h1>Pensamentos em aberto.</h1>
+  <p>Reflexões curtas sobre astrofísica, tecnologia e educação — sem compromisso de ser definitivo.</p>
+</div>
+
+<div class="notas-container">
+
+  <!-- ══════════════════════════════════════════════════
+       COMO ADICIONAR UMA NOTA NOVA:
+       Copie o bloco <article class="nota"> abaixo,
+       cole acima das outras notas e preencha o conteúdo.
+       Campos: data, tag (e sua cor), título e parágrafos.
+       ══════════════════════════════════════════════════ -->
+
+  <article class="nota">
+    <div class="nota-meta">
+      <span class="nota-data">Jun 2026</span>
+      <span class="nota-tag">Astrofísica</span>
+    </div>
+    <h2>O que as estrelas velhas têm a nos ensinar</h2>
+    <p>
+      Estrelas de população II — as mais antigas da galáxia — carregam em sua composição química
+      um registro do universo primitivo. Ao estudar sua metalicidade, conseguimos reconstruir
+      como os primeiros elementos pesados se espalharam pelo cosmos bilhões de anos antes de
+      existir qualquer planeta rochoso.
+    </p>
+    <p>
+      O que me fascina nesse campo não é só a escala de tempo, mas o método: estamos fazendo
+      arqueologia com espectroscopia. Cada linha de absorção num espectro estelar é uma pista
+      deixada há mais de 10 bilhões de anos. É história sem documentos — só física.
+    </p>
+  </article>
+
+  <article class="nota">
+    <div class="nota-meta">
+      <span class="nota-data">Mai 2026</span>
+      <span class="nota-tag verde">Educação</span>
+    </div>
+    <h2>Ensinar computação sem computador</h2>
+    <p>
+      Um dos exercícios que mais uso em sala é pedir para os alunos simularem um processo
+      computacional com papel e caneta: ordenar uma lista de baralho pela mão, executar um
+      algoritmo de busca binária em um índice físico. A abstração fica concreta quando o corpo
+      participa.
+    </p>
+    <p>
+      Não é nostalgia por métodos analógicos. É reconhecer que o pensamento computacional
+      precede a ferramenta. Quem entende o algoritmo aprende qualquer linguagem; quem só
+      aprende a sintaxe fica preso nela.
+    </p>
+  </article>
+
+  <article class="nota">
+    <div class="nota-meta">
+      <span class="nota-data">Abr 2026</span>
+      <span class="nota-tag roxo">Tecnologia</span>
+    </div>
+    <h2>Segurança da informação é comportamento, não produto</h2>
+    <p>
+      Depois de mais de 20 anos em TI, o padrão que vejo se repetir em incidentes de segurança
+      raramente é falha de software. É comportamento humano: senha reutilizada, link clicado
+      sem verificação, atualização adiada por comodidade.
+    </p>
+    <p>
+      Ferramentas de segurança resolvem parte do problema — a parte que pode ser automatizada.
+      A outra parte exige cultura, e cultura se constrói com educação contínua, não com um
+      treinamento anual de compliance que ninguém leva a sério.
+    </p>
+  </article>
+
+</div>
+
+<div class="notas-pergunta">
+  <h2>Tem uma pergunta?</h2>
+  <p>Se alguma nota despertou curiosidade ou você quer saber mais sobre um tema, mande sua pergunta. Responderei por e-mail.</p>
+
+  <form id="notas-form">
+    <input type="hidden" name="access_key" value="2357dff0-b87d-45b0-a7f8-3ebf77cea35e" />
+    <input type="hidden" name="subject" value="Pergunta — Notas · Prof. Manoel Moraes" />
+    <input type="checkbox" name="botcheck" style="display:none" />
+
+    <div class="form-grupo">
+      <label for="notas-nome">Nome</label>
+      <input type="text" id="notas-nome" name="name" placeholder="Seu nome" required />
+    </div>
+    <div class="form-grupo">
+      <label for="notas-email">E-mail</label>
+      <input type="email" id="notas-email" name="email" placeholder="seu@email.com" required />
+    </div>
+    <div class="form-grupo">
+      <label for="notas-pergunta">Pergunta</label>
+      <textarea id="notas-pergunta" name="message" placeholder="O que você quer saber?" required></textarea>
+    </div>
+    <button type="submit" class="form-submit" id="notas-btn">Enviar pergunta →</button>
+    <p class="form-aviso" id="notas-status">Responderei em até 48 horas.</p>
+  </form>
+</div>
+
+<div class="notas-voltar">
+  <a href="/">← Voltar ao site</a>
+</div>
+
+<footer>
+  <strong>Prof. Manoel Moraes</strong> &nbsp;·&nbsp;
+  Astrofísica · Computação · Educação &nbsp;·&nbsp;
+  © 2026
+</footer>
+
+<script>
+  // Hamburger menu
+  const ham  = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  ham.addEventListener('click', () => {
+    const aberto = menu.classList.toggle('aberto');
+    ham.classList.toggle('aberto');
+    ham.setAttribute('aria-expanded', aberto);
+  });
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menu.classList.remove('aberto');
+      ham.classList.remove('aberto');
+    });
+  });
+
+  // Formulário de perguntas
+  const notasForm = document.getElementById('notas-form');
+  if (notasForm) {
+    notasForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn    = document.getElementById('notas-btn');
+      const status = document.getElementById('notas-status');
+
+      btn.textContent = 'Enviando…';
+      btn.disabled    = true;
+
+      const data = Object.fromEntries(new FormData(notasForm));
+
+      try {
+        const res  = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+
+        if (json.success) {
+          status.textContent = '✅ Pergunta enviada! Responderei em breve.';
+          status.style.color = '#166534';
+          notasForm.reset();
+        } else {
+          throw new Error();
+        }
+      } catch {
+        status.textContent = '❌ Erro ao enviar. Tente pelo WhatsApp ou e-mail.';
+        status.style.color = '#991B1B';
+      } finally {
+        btn.textContent = 'Enviar pergunta →';
+        btn.disabled    = false;
+      }
+    });
+  }
+</script>
+
+<!-- Google Translate -->
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'pt',
+      includedLanguages: 'en',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  function traduzirPara(lang) {
+    const select = document.querySelector('.goog-te-combo');
+    if (!select) return;
+    select.value = lang === 'en' ? 'en' : '';
+    select.dispatchEvent(new Event('change'));
+    document.getElementById('btn-pt').classList.toggle('ativo', lang === 'pt');
+    document.getElementById('btn-en').classList.toggle('ativo', lang === 'en');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
