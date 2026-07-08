@@ -4,13 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prof. Me. Manoel Moraes</title>
-  <meta name="description" content="Site pessoal do Prof. Me. Manoel Moraes — professor universitário, pesquisador em astrofísica computacional e consultor em TI. Acesse materiais de aula, currículo e contato." />
+  <meta name="description" content="Site pessoal do Prof. Me. Manoel Moraes — professor universitário, pesquisador em física computacional e consultor em TI. Acesse materiais de aula, currículo e contato." />
   <meta property="og:title" content="Prof. Me. Manoel Moraes" />
-  <meta property="og:description" content="Professor universitário, pesquisador em astrofísica computacional e consultor em TI. Acesse materiais de aula e entre em contato." />
-  <meta property="og:image" content="https://www.manoelmoraes.pro.br/images/og-image.png" />
-  <meta property="og:url" content="https://www.manoelmoraes.pro.br/" />
+  <meta property="og:description" content="Professor universitário, pesquisador em física computacional e consultor em TI. Acesse materiais de aula e entre em contato." />
+  <meta property="og:image" content="https://manoelmoraes.pro.br/images/og-image.png" />
+  <meta property="og:url" content="https://manoelmoraes.pro.br/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Prof. Me. Manoel Moraes" />
+  <meta name="twitter:description" content="Professor universitário, pesquisador em física computacional e consultor em TI. Acesse materiais de aula e entre em contato." />
+  <meta name="twitter:image" content="https://manoelmoraes.pro.br/images/og-image.png" />
+  <link rel="canonical" href="https://manoelmoraes.pro.br/" />
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMF7R7HWPW"></script>
   <script>
@@ -33,13 +37,13 @@
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://www.manoelmoraes.pro.br/#manoel",
+        "@id": "https://manoelmoraes.pro.br/#manoel",
         "name": "Manoel Moraes",
-        "url": "https://www.manoelmoraes.pro.br",
-        "image": "https://www.manoelmoraes.pro.br/images/manoel.webp",
+        "url": "https://manoelmoraes.pro.br",
+        "image": "https://manoelmoraes.pro.br/images/manoel.webp",
         "jobTitle": "Professor Universitário, Pesquisador e Consultor em TI",
-        "description": "Professor de Tecnologia, Matemática e Física com mais de 20 anos de experiência. Mestre em Tecnologias Emergentes Aplicadas à Educação e mestrando em Astrofísica.",
-        "knowsAbout": ["Astrofísica", "Computação Paralela", "Segurança da Informação", "Machine Learning", "Ciência de Dados", "Redes de Computadores"],
+        "description": "Professor de Tecnologia, Matemática e Física com mais de 20 anos de experiência. Mestre em Tecnologias Emergentes Aplicadas à Educação.",
+        "knowsAbout": ["Física", "Computação Paralela", "Segurança da Informação", "Machine Learning", "Ciência de Dados", "Redes de Computadores"],
         "sameAs": [
           "https://www.linkedin.com/in/manoel-guilherme-moraes/",
           "https://orcid.org/0009-0005-3374-6882",
@@ -56,21 +60,21 @@
         "@type": "Course",
         "name": "Minicurso de Power BI",
         "description": "Do zero ao dashboard: conecte fontes de dados, crie visualizações interativas e tome decisões baseadas em dados.",
-        "provider": { "@id": "https://www.manoelmoraes.pro.br/#manoel" },
+        "provider": { "@id": "https://manoelmoraes.pro.br/#manoel" },
         "courseMode": ["onsite", "online"],
         "educationalLevel": "Iniciantes e intermediários",
         "inLanguage": "pt-BR",
-        "url": "https://www.manoelmoraes.pro.br/#cursos"
+        "url": "https://manoelmoraes.pro.br/#cursos"
       },
       {
         "@type": "Course",
         "name": "Minicurso de Python",
         "description": "Fundamentos da linguagem com foco em aplicações práticas: automação de tarefas, análise de dados e introdução à ciência de dados.",
-        "provider": { "@id": "https://www.manoelmoraes.pro.br/#manoel" },
+        "provider": { "@id": "https://manoelmoraes.pro.br/#manoel" },
         "courseMode": ["onsite", "online"],
         "educationalLevel": "Iniciantes",
         "inLanguage": "pt-BR",
-        "url": "https://www.manoelmoraes.pro.br/#cursos"
+        "url": "https://manoelmoraes.pro.br/#cursos"
       }
     ]
   }
@@ -97,9 +101,9 @@
     <a href="notas.html">Notas</a>
     <a href="#contato">Contato</a>
     <div class="lang-toggle">
-      <button class="lang-btn ativo" id="btn-pt" onclick="traduzirPara('pt')">PT</button>
+      <button class="lang-btn ativo" id="btn-pt" onclick="traduzirPara('pt')" aria-label="Ver site em português" aria-pressed="true">PT</button>
       <span>|</span>
-      <button class="lang-btn" id="btn-en" onclick="traduzirPara('en')">EN</button>
+      <button class="lang-btn" id="btn-en" onclick="traduzirPara('en')" aria-label="View site in English" aria-pressed="false">EN</button>
     </div>
   </nav>
 </header>
@@ -107,7 +111,7 @@
 <!-- Hero -->
 <section class="hero" id="inicio">
   <div>
-    <div class="hero-tag">Astrofísica · Computação · Educação</div>
+    <div class="hero-tag">Física · Computação · Educação</div>
     <h1>Prof. Me. Manoel Moraes</h1>
 
     <div class="roles">
@@ -118,7 +122,7 @@
 
     <p class="hero-desc">
       Atuo na interseção entre educação, ciência e tecnologia. Professor de disciplinas de computação e física,
-      pesquisador em astrofísica computacional e consultor em infraestrutura, segurança e desenvolvimento de sistemas.
+      pesquisador em física computacional e consultor em infraestrutura, segurança e desenvolvimento de sistemas.
     </p>
 
     <div class="hero-btns">
@@ -130,7 +134,7 @@
   <div class="hero-photo">
     <picture>
       <source srcset="images/estrela.webp" type="image/webp">
-      <img src="images/estrela.png" alt="Astrofísica">
+      <img src="images/estrela.png" alt="Física" fetchpriority="high">
     </picture>
 </div>
 </section>
@@ -163,18 +167,17 @@
       <p>
         Minha formação tem como base a Matemática e a Física, complementada por
         especializações em Segurança da Informação e Didática do Ensino Superior.
-        Sou <strong>Mestre em Tecnologias Emergentes Aplicadas à Educação</strong>
-        e atualmente <strong>mestrando em Astrofísica</strong>.
+        Sou <strong>Mestre em Tecnologias Emergentes Aplicadas à Educação</strong>.
       </p>
 
       <p>
         Minhas áreas de interesse incluem computação paralela e distribuída,
-        arqueologia estelar, modelagem de bibliotecas estelares, ensino de ciências,
+        modelagem de dados científicos, ensino de ciências,
         Machine Learning, Ciência de Dados e programação aplicada.
       </p>
 
       <div class="skills-badges">
-        <span>🔭 Astrofísica</span>
+        <span>⚛️ Física</span>
         <span>💻 Tecnologia</span>
         <span>📊 Data Science</span>
         <span>🛡 Segurança</span>
@@ -279,7 +282,7 @@
 <section id="pesquisa" class="bg-branco">
   <div class="sec-tag">Pesquisa</div>
   <h2>Publicações e projetos.</h2>
-  <p class="desc">Artigos publicados e investigações em curso em astrofísica e tecnologias educacionais.</p>
+  <p class="desc">Artigos publicados e investigações em curso em física e tecnologias educacionais.</p>
   <div id="pesquisa-container"></div>
   <div class="pesquisa-projetos">
     <h3 class="pesquisa-subtitulo">Projetos em andamento</h3>
@@ -359,10 +362,11 @@
 
 <footer>
   <strong>Prof. Me. Manoel Moraes</strong> &nbsp;·&nbsp;
-  Astrofísica · Computação · Educação &nbsp;·&nbsp;
-  © 2026
+  Física · Computação · Educação &nbsp;·&nbsp;
+  © <span id="ano-atual">2026</span>
 </footer>
 
+<script src="conteudo.js" charset="UTF-8"></script>
 <script src="script.js" charset="UTF-8"></script>
 
 <!-- Google Translate -->
@@ -382,9 +386,11 @@
     select.dispatchEvent(new Event('change'));
     document.getElementById('btn-pt').classList.toggle('ativo', lang === 'pt');
     document.getElementById('btn-en').classList.toggle('ativo', lang === 'en');
+    document.getElementById('btn-pt').setAttribute('aria-pressed', lang === 'pt');
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
   }
 </script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

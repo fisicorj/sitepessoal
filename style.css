@@ -133,12 +133,6 @@
       margin-bottom: 14px;
     }
 
-    .hero-sub {
-      font-size: 1.1rem;
-      color: #DDEAF6;
-      margin-bottom: 20px;
-    }
-
     .hero-desc {
       color: #C8D8E8;
       font-size: 0.97rem;
@@ -925,12 +919,6 @@
     .palestra-btn.contratar:hover { background: #1ebe5a; transform: translateY(-1px); }
 
     /* ── Contato ── */
-    .contato-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
-    }
-
     .contato-item {
       background: #fff;
       border: 1px solid var(--linha);
@@ -1113,7 +1101,6 @@
       .hero { grid-template-columns: 1fr; }
       .hero-photo { display: none; }
       .cards { grid-template-columns: 1fr 1fr; }
-      .contato-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 580px) {

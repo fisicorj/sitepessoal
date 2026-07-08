@@ -4,12 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notas — Prof. Me. Manoel Moraes</title>
-  <meta name="description" content="Notas curtas do Prof. Me. Manoel Moraes sobre astrofísica, tecnologia e educação." />
+  <meta name="description" content="Notas curtas do Prof. Me. Manoel Moraes sobre física, tecnologia e educação." />
   <meta property="og:title" content="Notas — Prof. Me. Manoel Moraes" />
-  <meta property="og:description" content="Reflexões curtas sobre astrofísica, tecnologia e educação." />
-  <meta property="og:image" content="https://www.manoelmoraes.pro.br/images/og-image.png" />
-  <meta property="og:url" content="https://www.manoelmoraes.pro.br/notas.html" />
+  <meta property="og:description" content="Reflexões curtas sobre física, tecnologia e educação." />
+  <meta property="og:image" content="https://manoelmoraes.pro.br/images/og-image.png" />
+  <meta property="og:url" content="https://manoelmoraes.pro.br/notas.html" />
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Notas — Prof. Me. Manoel Moraes" />
+  <meta name="twitter:description" content="Reflexões curtas sobre física, tecnologia e educação." />
+  <meta name="twitter:image" content="https://manoelmoraes.pro.br/images/og-image.png" />
+  <link rel="canonical" href="https://manoelmoraes.pro.br/notas.html" />
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMF7R7HWPW"></script>
   <script>
@@ -242,9 +247,9 @@
     <a href="notas.html" class="ativo">Notas</a>
     <a href="/#contato">Contato</a>
     <div class="lang-toggle">
-      <button class="lang-btn ativo" id="btn-pt" onclick="traduzirPara('pt')">PT</button>
+      <button class="lang-btn ativo" id="btn-pt" onclick="traduzirPara('pt')" aria-label="Ver site em português" aria-pressed="true">PT</button>
       <span>|</span>
-      <button class="lang-btn" id="btn-en" onclick="traduzirPara('en')">EN</button>
+      <button class="lang-btn" id="btn-en" onclick="traduzirPara('en')" aria-label="View site in English" aria-pressed="false">EN</button>
     </div>
   </nav>
 </header>
@@ -252,7 +257,7 @@
 <div class="notas-hero">
   <div class="sec-tag">Notas</div>
   <h1>Pensamentos em aberto.</h1>
-  <p>Reflexões curtas sobre astrofísica, tecnologia e educação — sem compromisso de ser definitivo.</p>
+  <p>Reflexões curtas sobre física, tecnologia e educação — sem compromisso de ser definitivo.</p>
 </div>
 
 <div class="notas-container">
@@ -267,7 +272,7 @@
   <article class="nota">
     <div class="nota-meta">
       <span class="nota-data">Jun 2026</span>
-      <span class="nota-tag">Astrofísica</span>
+      <span class="nota-tag">Física</span>
     </div>
     <h2>O que as estrelas velhas têm a nos ensinar</h2>
     <p>
@@ -354,11 +359,15 @@
 
 <footer>
   <strong>Prof. Me. Manoel Moraes</strong> &nbsp;·&nbsp;
-  Astrofísica · Computação · Educação &nbsp;·&nbsp;
-  © 2026
+  Física · Computação · Educação &nbsp;·&nbsp;
+  © <span id="ano-atual">2026</span>
 </footer>
 
 <script>
+  // Ano dinâmico no rodapé
+  const anoAtualEl = document.getElementById('ano-atual');
+  if (anoAtualEl) anoAtualEl.textContent = new Date().getFullYear();
+
   // Hamburger menu
   const ham  = document.getElementById('hamburger');
   const menu = document.getElementById('menu');
@@ -430,9 +439,11 @@
     select.dispatchEvent(new Event('change'));
     document.getElementById('btn-pt').classList.toggle('ativo', lang === 'pt');
     document.getElementById('btn-en').classList.toggle('ativo', lang === 'en');
+    document.getElementById('btn-pt').setAttribute('aria-pressed', lang === 'pt');
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
   }
 </script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
