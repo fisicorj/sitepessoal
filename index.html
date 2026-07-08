@@ -28,7 +28,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" /></noscript>
   <link rel="stylesheet" href="style.css" />
   <!-- Schema markup estruturado -->
   <script type="application/ld+json">
@@ -108,6 +109,7 @@
   </nav>
 </header>
 
+<main>
 <!-- Hero -->
 <section class="hero" id="inicio">
   <div>
@@ -348,6 +350,7 @@
     </form>
   </div>
 </section>
+</main>
 
 <button id="topo-btn" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
@@ -369,28 +372,61 @@
 <script src="conteudo.js" charset="UTF-8"></script>
 <script src="script.js" charset="UTF-8"></script>
 
-<!-- Google Translate -->
+<!-- Google Translate: carregado só quando o visitante troca de idioma (economiza ~106 KiB de JS não usado) -->
 <script>
+  let googleTranslateCarregado  = false;
+  let googleTranslateCarregando = false;
+  let idiomaPendente = null;
+
+  function aplicarTraducao(lang) {
+    const select = document.querySelector('.goog-te-combo');
+    if (!select) return false;
+    select.value = lang === 'en' ? 'en' : '';
+    select.dispatchEvent(new Event('change'));
+    return true;
+  }
+
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'pt',
       includedLanguages: 'en',
       autoDisplay: false
     }, 'google_translate_element');
+    googleTranslateCarregado = true;
+
+    const tentar = (restam) => {
+      if (!idiomaPendente || aplicarTraducao(idiomaPendente)) return;
+      if (restam > 0) setTimeout(() => tentar(restam - 1), 200);
+    };
+    tentar(15);
+  }
+
+  function carregarGoogleTranslate() {
+    if (googleTranslateCarregado || googleTranslateCarregando) return;
+    googleTranslateCarregando = true;
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(script);
   }
 
   function traduzirPara(lang) {
-    const select = document.querySelector('.goog-te-combo');
-    if (!select) return;
-    select.value = lang === 'en' ? 'en' : '';
-    select.dispatchEvent(new Event('change'));
     document.getElementById('btn-pt').classList.toggle('ativo', lang === 'pt');
     document.getElementById('btn-en').classList.toggle('ativo', lang === 'en');
     document.getElementById('btn-pt').setAttribute('aria-pressed', lang === 'pt');
     document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+
+    if (lang === 'pt' && !googleTranslateCarregado) return;
+
+    idiomaPendente = lang;
+
+    if (!googleTranslateCarregado) {
+      carregarGoogleTranslate();
+      return;
+    }
+
+    aplicarTraducao(lang);
   }
 </script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
