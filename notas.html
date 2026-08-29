@@ -117,6 +117,9 @@
       line-height: 1.8;
       margin-bottom: 14px;
       font-size: 1rem;
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
     }
 
     .nota p:last-child {
@@ -270,7 +273,47 @@
        cole acima das outras notas e preencha o conteúdo.
        Campos: data, tag (e sua cor), título e parágrafos.
        ══════════════════════════════════════════════════ -->
+<article class="nota">
+    <div class="nota-meta">
+      <span class="nota-data">Jul 2026</span>
+      <span class="nota-tag">Computação Quântica</span>
+    </div>
+    <h2>Qubits e o limite da simulação clássica</h2>
+    <p>
+      Sistemas quânticos com poucas dezenas de partículas já são difíceis demais para simular
+      em computadores clássicos, porque o espaço de estados cresce exponencialmente. É esse
+      limite prático, e não apenas teórico, que motiva a construção de computadores quânticos
+      reais: eles não competem com os clássicos em tudo, mas superam em problemas específicos
+      onde a superposição e o emaranhamento fazem diferença.
+    </p>
+    <p>
+      O que acho mais interessante não é a promessa de velocidade, é a mudança de paradigma no
+      próprio ato de programar. Em vez de instruções sequenciais determinísticas, trabalhamos
+      com portas que manipulam amplitudes de probabilidade. Aprender a pensar dessa forma exige
+      desconstruir boa parte da intuição que trazemos da computação tradicional.
+    </p>
+  </article>
 
+  <article class="nota">
+    <div class="nota-meta">
+      <span class="nota-data">Ago 2026</span>
+      <span class="nota-tag">Educação</span>
+    </div>
+    <h2>Ensinar código é ensinar a pensar</h2>
+    <p>
+      Toda vez que começo um semestre novo, seja explicando administração de sistemas Linux,
+      seja introduzindo lógica em C#, percebo que o maior obstáculo não é a sintaxe, é a
+      estruturação do raciocínio. Aluno que aprende a decompor um problema em passos pequenos
+      carrega essa habilidade para qualquer linguagem ou sistema que vier depois.
+    </p>
+    <p>
+      Por isso prefiro começar as aulas com o porquê antes do como: por que um sistema
+      operacional precisa gerenciar processos daquela forma, por que uma estrutura de dados
+      resolve melhor certo problema. Ensinar tecnologia sem esse contexto vira decoreba,
+      e decoreba não sobrevive ao primeiro problema real.
+    </p>
+  </article>
+  
   <article class="nota">
     <div class="nota-meta">
       <span class="nota-data">Jun 2026</span>

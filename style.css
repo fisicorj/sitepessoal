@@ -217,6 +217,9 @@
       font-size: 0.97rem;
       max-width: 680px;
       margin-bottom: 36px;
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
     }
 
     /* ── Cards de papel ── */
@@ -1154,6 +1157,9 @@
   margin-bottom: 18px;
   color: #64748B;
   line-height: 1.8;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .skills-badges {

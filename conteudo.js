@@ -24,12 +24,36 @@
 // { nome: "Aula gravada 01", tipo: "Vídeo", data: "2026", link: "https://youtube.com/..." }
 const materiaisEnsino = [
   {
-    nome: "FIAP",
+    nome: "Faculdade Salvador Arena",
     icone: "🏛️",
     aberta: false,
     disciplinas: [
       {
-        nome: "Redes",
+        nome: "Engenharia de Software",
+        descricao: "Materiais da disciplina.",
+        arquivos: [
+          //{ nome: "Aula 01 - Introdução", tipo: "Slide", data: "2026", link: "" },
+          //{ nome: "Lista 01", tipo: "Lista", data: "2026", link: "" }
+        ]
+      },
+      {
+        nome: "Modelagem de Software",
+        descricao: "Materiais da disciplina.",
+        arquivos: [
+          //{ nome: "Aula 01 - Introdução", tipo: "Slide", data: "2026", link: "" },
+          //{ nome: "Lista 01", tipo: "Lista", data: "2026", link: "" }
+        ]
+      },
+      {
+        nome: "Algoritmos II",
+        descricao: "Materiais da disciplina.",
+        arquivos: [
+          //{ nome: "Aula 01 - Introdução", tipo: "Slide", data: "2026", link: "" },
+          //{ nome: "Lista 01", tipo: "Lista", data: "2026", link: "" }
+        ]
+      },
+      {
+        nome: "Arquitetura de Computadores",
         descricao: "Materiais da disciplina.",
         arquivos: [
           //{ nome: "Aula 01 - Introdução", tipo: "Slide", data: "2026", link: "" },
